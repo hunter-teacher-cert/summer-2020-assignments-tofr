@@ -11,6 +11,8 @@
    For example, it should display "24.0 C = 75.2 F".
    Here is the formula. Be careful not to use integer division!
    F = C * 9/5 + 32
+   
+   Topher & Fierce Dragon, June 2020
 **/
 import java.util.Scanner;
 

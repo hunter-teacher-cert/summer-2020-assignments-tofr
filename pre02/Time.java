@@ -3,6 +3,8 @@
  * exercise 3
  * https://github.com/hunter-teacher-cert/pre-work/blob/master/pre02.org
  * https://books.trinket.io/thinkjava/chapter2.html
+   
+   Topher & Fierce Dragon, June 2020
  **/
 
 public class Time {
