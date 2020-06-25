@@ -11,30 +11,34 @@
    Draw a stack diagram that shows the state of the program the first time ping is invoked.
    What happens if you invoke baffle(); at the end of the ping method? (We will see why in the next chapter.)
 
-    Topher & Fierce Dragon, June 2020
+    Topher & F. Dragon, June 2020
 **/
 
-public static void main( String[] args ) {
-
-  public static void zoop() {
-    baffle();
-    System.out.print("You wugga ");
-    baffle();
-  }
-
-  public static void main(String[] args) {
+public static void main( String[] args )
+{
+  public static void main(String[] args)
+  {
     System.out.print("No, I ");
     zoop();
     System.out.print("I ");
     baffle();
   }
 
-  public static void baffle() {
+  public static void zoop()
+  {
+    baffle();
+    System.out.print("You wugga ");
+    baffle();
+  }
+
+  public static void baffle()
+  {
     System.out.print("wug");
     ping();
   }
 
-  public static void ping() {
+  public static void ping()
+  {
     System.out.println(".");
   }
 
