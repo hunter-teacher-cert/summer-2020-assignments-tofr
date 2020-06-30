@@ -31,15 +31,32 @@ public class Recursion
     /*--v------move-me-down-one-test-at-a-time-----------v--
       ==^================================================^==*/
 
+    System.out.printf("ack(0,0) = %d\n", ack(0,0) );
+    System.out.printf("ack(0,1) = %d\n", ack(0,1) );
+    System.out.printf("ack(1,1) = %d\n", ack(1,1) );
+    System.out.printf("ack(1,2) = %d\n", ack(1,2) );
+    System.out.printf("ack(1,3) = %d\n", ack(1,3) );
+    System.out.printf("ack(2,1) = %d\n", ack(2,1) );
+    System.out.printf("ack(2,2) = %d\n", ack(2,2) );
+    System.out.printf("ack(2,3) = %d\n", ack(2,3) );
+    System.out.printf("ack(3,1) = %d\n", ack(3,1) );
+    System.out.printf("ack(3,2) = %d\n", ack(3,2) );
+    System.out.printf("ack(3,3) = %d\n", ack(3,3) );
     /*--v------move-me-down-one-test-at-a-time-----------v--
       ==^================================================^==*/
 
+    int[] a1 = {0};
+    int[] a2 = {1};
+    int[] a3 = {2};
+    int[] a4 = {0,1};
+    int[] a5 = {1,2};
+    //int[] a = {};
+    System.out.printf( "recursiveSum(a1) = %d\n", recursiveSum(a1) );
+    System.out.printf( "recursiveSum(a2) = %d\n", recursiveSum(a2) );
+    System.out.printf( "recursiveSum(a3) = %d\n", recursiveSum(a3) );
+    System.out.printf( "recursiveSum(a4) = %d\n", recursiveSum(a4) );
+    System.out.printf( "recursiveSum(a5) = %d\n", recursiveSum(a5) );
     /*--v------move-me-down-one-test-at-a-time-----------v--
-      System.out.printf("recursiveSum([0] = %d\n", recursiveSum([0])
-      System.out.printf("recursiveSum([1] = %d\n", recursiveSum([1])
-      System.out.printf("recursiveSum([2] = %d\n", recursiveSum([2])
-      System.out.printf("recursiveSum([0,1] = %d\n", recursiveSum([0,1])
-      System.out.printf("recursiveSum([1,2] = %d\n", recursiveSum([1,2])
       ==^================================================^==*/
 
   }//end main()
@@ -47,8 +64,8 @@ public class Recursion
 
   public static int factorial(int n)
   {
-    if (n<3)
-      return n;
+    if (n<2)
+      return 1;
     else
       return n * factorial(n-1);
   }//end fac()
@@ -64,17 +81,60 @@ public class Recursion
 
 
   //insert ackerman fr; pre-work 5 exer 8
+  /**
+     Ackerman fxn
+     A(m, n) =
+     ⎧
+     ⎪
+     ⎨
+     ⎪
+     ⎩
+     n+1 if  m = 0
+     A(m−1, 1) if  m > 0  and  n = 0
+     A(m−1, A(m, n−1)) if  m > 0  and  n > 0
+  **/
+  public static int ack( int m, int n )
+  {
+    if (m==0) {
+      return n+1;
+    }
+    else if (m>0 && n==0) {
+      return ack(m-1, 1);
+    }
+    else if (m>0 && n>0) {
+      return ack( m-1, ack(m, n-1) );
+    }
+    else
+      return -1;
+  }//end ack()
+
 
   /**
      challenge:
      Write a recursive function that will find the sum of the elements of an integer array.
      If you would like a skeleton method, you can start here:
   **/
-  public static int recursiveSum(int[] ia)
+  //assumes array length > 0
+  public static int recursiveSum( int[] ia )
+  {
+    System.out.printf("len: %d\n", ia.length);
+    return recSumHelper(ia, 0);
+  } public static int recSumHelper( int[] iarr, int startPos )
   {
     int retInt = 0;
+    int windowSize = iarr.length - startPos;
+    //System.out.printf("len: %d\n", iarr.length);
+    //System.out.printf("windowSize: %d\n", windowSize);
+
+    if ( windowSize < 2 ) {
+      System.out.print(iarr[startPos]);
+      retInt = iarr[startPos];
+    }
+    else {
+      retInt = iarr[startPos] + recSumHelper(iarr,startPos+1);
+    }
     return retInt;
-  }//end recSum()
+  }//end recSumHelper
 
 
 }//end class
