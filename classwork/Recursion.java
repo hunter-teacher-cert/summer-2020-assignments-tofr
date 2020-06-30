@@ -21,6 +21,7 @@ public class Recursion
     System.out.printf("5! = %d\n", factorial(5) );
     /*--v------move-me-down-one-test-at-a-time-----------v--
       ==^================================================^==*/
+
     System.out.printf("fib(1) = %d\n", fib(1) );
     System.out.printf("fib(2) = %d\n", fib(2) );
     System.out.printf("fib(3) = %d\n", fib(3) );
@@ -29,7 +30,19 @@ public class Recursion
     System.out.printf("fib(9) = %d\n", fib(9) );
     /*--v------move-me-down-one-test-at-a-time-----------v--
       ==^================================================^==*/
-  }
+
+    /*--v------move-me-down-one-test-at-a-time-----------v--
+      ==^================================================^==*/
+
+    /*--v------move-me-down-one-test-at-a-time-----------v--
+      System.out.printf("recursiveSum([0] = %d\n", recursiveSum([0])
+      System.out.printf("recursiveSum([1] = %d\n", recursiveSum([1])
+      System.out.printf("recursiveSum([2] = %d\n", recursiveSum([2])
+      System.out.printf("recursiveSum([0,1] = %d\n", recursiveSum([0,1])
+      System.out.printf("recursiveSum([1,2] = %d\n", recursiveSum([1,2])
+      ==^================================================^==*/
+
+  }//end main()
 
 
   public static int factorial(int n)
@@ -38,7 +51,7 @@ public class Recursion
       return n;
     else
       return n * factorial(n-1);
-  }
+  }//end fac()
 
 
   public static int fib(int n)
@@ -47,6 +60,21 @@ public class Recursion
       return n;
     else
       return fib(n-1) + fib(n-2);
-  }
+  }//end fib()
 
-}
+
+  //insert ackerman fr; pre-work 5 exer 8
+
+  /**
+     challenge:
+     Write a recursive function that will find the sum of the elements of an integer array.
+     If you would like a skeleton method, you can start here:
+  **/
+  public static int recursiveSum(int[] ia)
+  {
+    int retInt = 0;
+    return retInt;
+  }//end recSum()
+
+
+}//end class
