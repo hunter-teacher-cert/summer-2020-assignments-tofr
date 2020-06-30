@@ -1,7 +1,8 @@
 /**
-   Day 0 classwork
+   classwork -- Day 0
    recursion
-   T. Mykolyk & F. Dragon, June 2020
+   T. Mykolyk, F. Dragon
+   June 2020
 **/
 
 import java.io.*;
@@ -9,6 +10,7 @@ import java.util.*;
 
 public class Recursion
 {
+
   public static void main( String[] args )
   {
     System.out.println("Good News Everyone!");
@@ -17,12 +19,16 @@ public class Recursion
     System.out.printf("3! = %d\n", factorial(3) );
     System.out.printf("4! = %d\n", factorial(4) );
     System.out.printf("5! = %d\n", factorial(5) );
+    /*--v------move-me-down-one-test-at-a-time-----------v--
+      ==^================================================^==*/
     System.out.printf("fib(1) = %d\n", fib(1) );
     System.out.printf("fib(2) = %d\n", fib(2) );
     System.out.printf("fib(3) = %d\n", fib(3) );
     System.out.printf("fib(4) = %d\n", fib(4) );
     System.out.printf("fib(5) = %d\n", fib(5) );
     System.out.printf("fib(9) = %d\n", fib(9) );
+    /*--v------move-me-down-one-test-at-a-time-----------v--
+      ==^================================================^==*/
   }
 
 
