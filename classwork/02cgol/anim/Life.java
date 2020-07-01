@@ -3,6 +3,11 @@
    2D array application :: Conway's Game of Life
    M. Zamansky, T. Mykolyk, F. Dragon, et al
    June 2020
+
+   USAGE:
+   > javac Life.java
+   > java Life
+   Ctrl-C to quit
 **/
 
 
@@ -127,12 +132,13 @@ public class Life
     scan the board to generate a NEW board with the
     next generation
   */
-  public char[][] generateNextBoard( char[][] board )
+  public static char[][] generateNextBoard( char[][] board )
   {
-    char newBoard[][] = new char[25][25];
+    int rows = board.length;
+    int cols = board[0].length;
+    char[][] newBoard = createNewBoard(rows, cols);
+
     // fill the new board
-    int rows = 25;
-    int cols = 25;
     for (int r = 0; r < rows; r++){
       for (int c = 0; c < cols; c++){
         char nextCell = getNextGenCell(board,r,c);
@@ -143,11 +149,65 @@ public class Life
   }//end generateNextBoard()
 
 
+  //helper method to slow down animation 
+  public static void delay(int n)
+  {
+    try {
+        Thread.sleep(n);
+    } 
+    catch(InterruptedException e) {}
+  }
+
+  
+  public static void animateBoard(char[][] board)
+  {
+    //send ANSI control char to clear terminal and put cursor at top left
+    System.out.print("[0;0H\n"); 
+    for( int row=0; row<board.length; row++ ) {
+	    for ( int col=0; col<board[row].length; col++ ) {
+        System.out.print( board[row][col] );
+	    }
+	    System.out.println();
+    }
+    delay(1000);
+  }
+
+
+  
+
+  
   public static void main(String[] args)
   {
     char[][] board;
     board = createNewBoard(25,25);
-    printBoard(board);
-  }
+
+    /**
+       USAGE:
+       pick one of the two starting configs below
+       comment out the other one
+    **/
+    
+    //init config to lead settle into stable oscillation of blinkers
+    setCell(board,10,10,'X');
+    setCell(board,10,9,'X');
+    setCell(board,10,11,'X');
+    setCell(board,9,10,'X');
+    setCell(board,11,10,'X');
+
+    //place glider at upper left
+    /*
+    setCell(board,0,1,'X');
+    setCell(board,1,2,'X');
+    setCell(board,2,0,'X');
+    setCell(board,2,1,'X');
+    setCell(board,2,2,'X');
+    */
+
+    //run for 100 "frames" 
+    for( int i=0; i<100; i++ ) {
+      board = generateNextBoard(board);
+      animateBoard(board);
+    }
+  }//end main()
 
 }//end Life
