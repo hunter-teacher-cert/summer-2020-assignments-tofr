@@ -195,6 +195,7 @@ public class Life
     setCell(board,11,10,'X');
 
     //place glider at upper left
+    //  (https://en.wikipedia.org/wiki/Hacker_culture)
     /*
     setCell(board,0,1,'X');
     setCell(board,1,2,'X');
