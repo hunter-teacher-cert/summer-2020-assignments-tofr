@@ -87,11 +87,11 @@ public class Life
         if (board[row][col]=='X')
           numLivingNeighbours++;
       }
-    }    
+    }   
     return numLivingNeighbours;
   }//end countNeighbours()
 
-  
+ 
   /*
     given a board and a cell, determine, based on the rules for 
     Conway's GOL if the cell is alive ('X') or dead (' ') in the 
@@ -108,43 +108,42 @@ public class Life
     //init temp vars to clean up logic below:
     int n = countNeighbours(board, r, c);
     char current = board[r][c];
-    
-    if ((n==2 || n == 3) && current=='X')
-	    return 'X';
-    else if (n==3 && current==' ')
-	    return 'X';
-    else
-	    return ' ';
+
+    if ( current=='X' && (n==2 || n==3) ) //i'm alive and will survive
+      return 'X';
+    else if ( current==' ' && n==3 )      //i'm dead but will come alive
+      return 'X';
+    else              //about to die, or i'm dead and will stay dead
+      return ' '; 
   }//end getNextGenCell()
 
 
-  
+
   /*
     scan the board to generate a NEW board with the
     next generation
   */
-  public char[][] generateNextBoard(char[][] board)
+  public char[][] generateNextBoard( char[][] board )
   {
     char newBoard[][] = new char[25][25];
     // fill the new board
     int rows = 25;
     int cols = 25;
     for (int r = 0; r < rows; r++){
-	    for (int c = 0; c < cols; c++){
+      for (int c = 0; c < cols; c++){
         char nextCell = getNextGenCell(board,r,c);
         newBoard[r][c] = nextCell;
-	    }
+      }
     }
     return newBoard;
   }//end generateNextBoard()
 
-  
+
   public static void main(String[] args)
   {
     char[][] board;
     board = createNewBoard(25,25);
-    printBoard(board)
-      ;	
+    printBoard(board);
   }
-  
+
 }//end Life
