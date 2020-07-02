@@ -38,9 +38,21 @@ public class Driver
     Time runningTime = new Time(2, 16, 0.0);
     Time endTime = Time.add(startTime, runningTime);
 
+    System.out.println("\n-----------------------");
+    System.out.println("Testing add()...");
     System.out.println(startTime);
     System.out.println(runningTime);
     System.out.println(endTime);
+
+    System.out.println("\n-----------------------");
+    System.out.println("Testing startTime.increment(3)...");
+    System.out.println(startTime);
+    startTime.increment(3);
+    System.out.println(startTime);
+    System.out.println();
+    System.out.println();
+    System.out.println();
+    System.out.println();
 
   }
 
