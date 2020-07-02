@@ -13,24 +13,25 @@ public class Recursion
 
   public static void main( String[] args )
   {
+    /*--v------move-me-down-one-test-at-a-time-----------v--
     System.out.println("Good News Everyone!");
     System.out.printf("1! = %d\n", factorial(1) );
     System.out.printf("2! = %d\n", factorial(2) );
     System.out.printf("3! = %d\n", factorial(3) );
     System.out.printf("4! = %d\n", factorial(4) );
     System.out.printf("5! = %d\n", factorial(5) );
-    /*--v------move-me-down-one-test-at-a-time-----------v--
       ==^================================================^==*/
 
+    /*--v------move-me-down-one-test-at-a-time-----------v--
     System.out.printf("fib(1) = %d\n", fib(1) );
     System.out.printf("fib(2) = %d\n", fib(2) );
     System.out.printf("fib(3) = %d\n", fib(3) );
     System.out.printf("fib(4) = %d\n", fib(4) );
     System.out.printf("fib(5) = %d\n", fib(5) );
     System.out.printf("fib(9) = %d\n", fib(9) );
-    /*--v------move-me-down-one-test-at-a-time-----------v--
       ==^================================================^==*/
 
+    /*--v------move-me-down-one-test-at-a-time-----------v--
     System.out.printf("ack(0,0) = %d\n", ack(0,0) );
     System.out.printf("ack(0,1) = %d\n", ack(0,1) );
     System.out.printf("ack(1,1) = %d\n", ack(1,1) );
@@ -42,9 +43,9 @@ public class Recursion
     System.out.printf("ack(3,1) = %d\n", ack(3,1) );
     System.out.printf("ack(3,2) = %d\n", ack(3,2) );
     System.out.printf("ack(3,3) = %d\n", ack(3,3) );
-    /*--v------move-me-down-one-test-at-a-time-----------v--
       ==^================================================^==*/
 
+    /*--v------move-me-down-one-test-at-a-time-----------v--
     int[] a1 = {0};
     int[] a2 = {1};
     int[] a3 = {2};
@@ -56,7 +57,6 @@ public class Recursion
     System.out.printf( "recursiveSum(a3) = %d\n", recursiveSum(a3) );
     System.out.printf( "recursiveSum(a4) = %d\n", recursiveSum(a4) );
     System.out.printf( "recursiveSum(a5) = %d\n", recursiveSum(a5) );
-    /*--v------move-me-down-one-test-at-a-time-----------v--
       ==^================================================^==*/
 
   }//end main()
