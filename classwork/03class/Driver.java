@@ -1,7 +1,10 @@
 /**
    classwork -- Day 3
    intro to classes & objects
-   M. Zamansky, T. Mykolyk, F. Dragon
+
+   driver/tester file for class Time
+
+   T. Mykolyk, F. Dragon
    June 2020
 **/
 
@@ -10,8 +13,8 @@ import java.util.*;
 
 public class Driver
 {
-  public static void main( String[] args ) {
-
+  public static void main( String[] args )
+  {
     //invoke default constructor
     Time t1 = new Time();
     System.out.println(t1);
@@ -32,7 +35,11 @@ public class Driver
     Time time2 = time1;
     Time time3 = new Time(9, 30, 0.0);
 
-    System.out.println( time1.equals(time3) );
+    System.out.println("\n-----------------------");
+    System.out.println("Testing equals()...");
+    System.out.println( time1.equals(time2) ); //true
+    System.out.println( time2.equals(time3) ); //true iff equals() properly overridden
+    System.out.println( time1.equals(time3) ); //true iff equals() properly overridden
 
     Time startTime = new Time(18, 50, 0.0);
     Time runningTime = new Time(2, 16, 0.0);
@@ -53,7 +60,6 @@ public class Driver
     System.out.println();
     System.out.println();
     System.out.println();
-
   }
 
 }//end Driver
