@@ -88,7 +88,7 @@ public class Time
                       t.hour, t.minute, t.second);
   }
 
-
+  //~~~~~~~~~~~~~~~ begin OVERLOADED METHODS SECTION ~~~~~~~~~~~~~~~~~~
   //overload inherited toString()
   public String toString()
   {
@@ -96,15 +96,21 @@ public class Time
                          this.hour, this.minute, this.second);
   }
 
+  
   //overload inherited equals()
   public boolean equals(Time that)
   {
+    //simplest means of checking for Object equivalence:
+    //compare corresponding instance var values...
     return this.hour == that.hour
       && this.minute == that.minute
       && this.second == that.second;
   }
+  //~~~~~~~~~~~~~~~ end OVERLOADED METHODS SECTION ~~~~~~~~~~~~~~~~~~~~
 
 
+  //static add() -- belongs to no specific Time instance
+  // returns a Time object representing t1 advanced by t2
   public static Time add(Time t1, Time t2)
   {
     Time sum = new Time();
@@ -114,7 +120,7 @@ public class Time
     return sum;
   }
 
-  /* naive version
+  /* naive attempt at instance method version of add():
   public Time add(Time t2)
   {
     Time sum = new Time();
@@ -142,9 +148,10 @@ public class Time
       sum.hour += 1;
     }
     return sum;
-  }
+  }//end add()
 
-
+  
+  //increment this instance of Time by input number of seconds
   public void increment(double seconds)
   {
     this.second += seconds;
@@ -156,5 +163,6 @@ public class Time
       this.minute -= 60;
       this.hour += 1;
     }
-  }  
-}//Time
+  }//end increment()
+  
+}//end Time
