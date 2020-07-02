@@ -32,7 +32,7 @@ public class Driver
     */
 
     Time time1 = new Time(9, 30, 0.0);
-    Time time2 = time1;
+    Time time2 = time1; //make time2 an alias for time1 (point to same mem location)
     Time time3 = new Time(9, 30, 0.0);
 
     System.out.println("\n-----------------------");
