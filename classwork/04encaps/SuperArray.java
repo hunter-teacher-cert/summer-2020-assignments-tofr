@@ -1,11 +1,30 @@
+/**
+   classwork -- Day 4
+   encapsulation / SuperArray
+
+   SuperArray is a wrapper class for an array.
+   Provides "pass-thru" accessibility to array capabilities:
+   - get/set by index
+   - get length
+   Adds functionality:
+   - dynamic capacity
+   - auto-grow capacity if necessary to
+
+   M. Zamansky, J. Dyrland-Weaver, T. Mykolyk, F. Dragon
+   June 2020
+ **/
+
 import java.io.*;
 import java.util.*;
 
 public class SuperArray
 {
-  private int[] data;
-  private int numberElements;
+  //instance vars
+  private int[] data;           //where the actual data is stored
+  private int numberElements;   //number of "meaningful" elements
 
+
+  // ~~~~~~~~~~~~~~~ CONSTRUCTORS ~~~~~~~~~~~~~~~
   //overloaded constructor -- allows specification of initial capacity
   public SuperArray( int size )
   {
@@ -19,6 +38,8 @@ public class SuperArray
     this(10);
   }
 
+
+  // ~~~~~~~~~~~~~~~ METHODS ~~~~~~~~~~~~~~~
   public void add( int value )
   {
     // test to see if we need to grow, then grow
@@ -29,9 +50,12 @@ public class SuperArray
 
     // add item
     data[numberElements] = value;
+
+    // increment numberElements
     numberElements = numberElements + 1;
 
-  }
+  }//end add()
+
 
   public void add(int index, int value)
   {
@@ -50,7 +74,7 @@ public class SuperArray
 
     // increment numberElements
     numberElements++ ;
-  }
+  }//end add(i,i)
 
 
   public void remove(int index)
@@ -61,7 +85,7 @@ public class SuperArray
     }
     // subtract fom numElements;
     numberElements--;
-  }
+  }//end remove()
 
 
   public boolean isEmpty()
@@ -83,9 +107,10 @@ public class SuperArray
       s = s + data[i] + ", ";
     }
     return s;
-  }
+  }//end toString()
 
 
+  //helper method for debugging/development phase
   public String debug()
   {
     String s = "";
@@ -96,12 +121,13 @@ public class SuperArray
     }
     s = s + "\n";
     return s;
-  }
+  }//end debug()
 
 
   private void grow()
   {
     // create a new array with extra space
+    // Q: How did you decide how much to increase capacity by?
     int newSize = data.length + (data.length / 2);
     int[] newData = new int[newSize];
 
@@ -111,6 +137,7 @@ public class SuperArray
     }
 
     // point data to the new array
+    // Q: How does this look when illustrated using encapsulation diagram?
     data = newData;
 
   }//end grow()
