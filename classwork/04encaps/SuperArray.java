@@ -8,7 +8,7 @@
    - get length
    Adds functionality:
    - dynamic capacity
-   - auto-grow capacity if necessary to
+   - auto-grow capacity if necessary
 
    M. Zamansky, J. Dyrland-Weaver, T. Mykolyk, F. Dragon
    June 2020
@@ -97,6 +97,14 @@ public class SuperArray
   public int get(int index)
   {
     return data[index];
+  }
+
+
+  public int set(int index, int newVal)
+  {
+    int oldVal = data[index];
+    data[index] = newVal;
+    return oldVal;
   }
 
 
