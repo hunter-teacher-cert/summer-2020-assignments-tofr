@@ -1,0 +1,18 @@
+https://books.trinket.io/thinkjava/chapter4.html
+
+1. 
+ping(): prints a period followed by a newline ( ".\n" )
+baffle(): prints "wug" then calls ping(), so in total will output "wug.\n"
+
+No, I wug.
+You wugga wug.
+I wug.
+
+2.
+main()
+zoop()
+baffle()
+ping()
+
+3.
+ping() and baffle() will continue calling each other indefinitely.
